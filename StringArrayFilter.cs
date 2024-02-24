@@ -17,4 +17,28 @@ class Program
             Console.WriteLine(str);
         }
     }
+     // Функция для фильтрации массива строк по условию
+    static string[] FilterStrings(string[] inputArray)
+    {
+        // Подсчет количества строк
+        int count = 0;
+        foreach (var str in inputArray)
+        {
+            if (str.Length <= 3) count++;
+        }
+        
+        // Создание и заполнение результирующего массива
+        string[] resultArray = new string[count];
+        int index = 0;
+        foreach (var str in inputArray)
+        {
+            if (str.Length <= 3)
+            {
+                resultArray[index] = str;
+                index++;
+            }
+        }
+        
+        return resultArray;
+    }
 }
